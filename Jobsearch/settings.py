@@ -25,7 +25,7 @@ SECRET_KEY = 'n+h-cnw5^*6u5@jy_l4)#j-dcgk_9p&cgz2_sq(h3*_b0x+(9('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['jobsearchex.herokuapp.com']
 
 
 # Application definition
