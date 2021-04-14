@@ -269,6 +269,8 @@
           <a class="navbar-brand"></a>
           <form class="form-inline">
               {% csrf_token %}
+		                {% if user.is_authenticated %}
+
               <a href="/job/" type="button" class="btn btn-primary " >My Jobs</a> &nbsp;&nbsp;&nbsp;&nbsp;
               <a href="/profile/" type="button" class="btn btn-primary " >Edit HR Profile</a> &nbsp;&nbsp;&nbsp;&nbsp;
               <a href="/add/" type="button" class="btn btn-primary " >Add new Job</a> &nbsp;&nbsp;&nbsp;&nbsp;
