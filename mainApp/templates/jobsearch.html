@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!--  This file has been downloaded from bootdey.com    @bootdey on twitter -->
+    <!--  All snippets are MIT license http://bootdey.com/license -->
+    <title>BJS- Bharat Job Search</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+    <style type="text/css">
+    	body{
+    background:#dcdcdc;
+    margin-top:20px;}
+
+.widget-26 {
+  color: #3c4142;
+  font-weight: 400;
+}
+
+.widget-26 tr:first-child td {
+  border: 0;
+}
+
+.widget-26 .widget-26-job-emp-img img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.widget-26 .widget-26-job-title {
+  min-width: 200px;
+}
+
+.widget-26 .widget-26-job-title a {
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: #3c4142;
+  line-height: 1.5;
+}
+
+.widget-26 .widget-26-job-title a:hover {
+  color: #68CBD7;
+  text-decoration: none;
+}
+
+.widget-26 .widget-26-job-title .employer-name {
+  margin: 0;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #3c4142;
+  font-size: 0.8125rem;
+  color: #3c4142;
+}
+
+.widget-26 .widget-26-job-title .employer-name:hover {
+  color: #68CBD7;
+  text-decoration: none;
+}
+
+.widget-26 .widget-26-job-title .time {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.widget-26 .widget-26-job-info {
+  min-width: 100px;
+  font-weight: 400;
+}
+
+.widget-26 .widget-26-job-info p {
+  line-height: 1.5;
+  color: #3c4142;
+  font-size: 0.8125rem;
+}
+
+.widget-26 .widget-26-job-info .location {
+  color: #3c4142;
+}
+
+.widget-26 .widget-26-job-salary {
+  min-width: 70px;
+  font-weight: 400;
+  color: #3c4142;
+  font-size: 0.8125rem;
+}
+
+.widget-26 .widget-26-job-category {
+  padding: .5rem;
+  display: inline-flex;
+  white-space: nowrap;
+  border-radius: 15px;
+}
+
+.widget-26 .widget-26-job-category .indicator {
+  width: 13px;
+  height: 13px;
+  margin-right: .5rem;
+  float: left;
+  border-radius: 50%;
+}
+
+.widget-26 .widget-26-job-category span {
+  font-size: 0.8125rem;
+  color: #3c4142;
+  font-weight: 600;
+}
+
+.widget-26 .widget-26-job-starred svg {
+  width: 20px;
+  height: 20px;
+  color: #fd8b2c;
+}
+
+.widget-26 .widget-26-job-starred svg.starred {
+  fill: #fd8b2c;
+}
+.bg-soft-base {
+  background-color: #e1f5f7;
+}
+.bg-soft-warning {
+    background-color: #fff4e1;
+}
+.bg-soft-success {
+    background-color: #d1f6f2;
+}
+.bg-soft-danger {
+    background-color: #fedce0;
+}
+.bg-soft-info {
+    background-color: #d7efff;
+}
+
+
+.search-form {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.search-form input {
+  height: 100%;
+  background: transparent;
+  border: 0;
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  height: 100%;
+  font-size: 1rem;
+}
+
+.search-form select {
+  background: transparent;
+  border: 0;
+  padding: 1rem;
+  height: 100%;
+  font-size: 1rem;
+}
+
+.search-form select:focus {
+  border: 0;
+}
+
+.search-form button {
+  height: 100%;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.search-form button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.search-body {
+  margin-bottom: 1.5rem;
+}
+
+.search-body .search-filters .filter-list {
+  margin-bottom: 1.3rem;
+}
+
+.search-body .search-filters .filter-list .title {
+  color: #3c4142;
+  margin-bottom: 1rem;
+}
+
+.search-body .search-filters .filter-list .filter-text {
+  color: #727686;
+}
+
+.search-body .search-result .result-header {
+  margin-bottom: 2rem;
+}
+
+.search-body .search-result .result-header .records {
+  color: #3c4142;
+}
+
+.search-body .search-result .result-header .result-actions {
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-body .search-result .result-header .result-actions .result-sorting {
+  display: flex;
+  align-items: center;
+}
+
+.search-body .search-result .result-header .result-actions .result-sorting span {
+  flex-shrink: 0;
+  font-size: 0.8125rem;
+}
+
+.search-body .search-result .result-header .result-actions .result-sorting select {
+  color: #68CBD7;
+}
+
+.search-body .search-result .result-header .result-actions .result-sorting select option {
+  color: #3c4142;
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .search-body .search-filters {
+    display: flex;
+  }
+  .search-body .search-filters .filter-list {
+    margin-right: 1rem;
+  }
+}
+
+.card-margin {
+    margin-bottom: 1.875rem;
+}
+
+@media (min-width: 992px){
+.col-lg-2 {
+    flex: 0 0 16.66667%;
+    max-width: 16.66667%;
+}
+}
+
+.card-margin {
+    margin-bottom: 1.875rem;
+}
+.card {
+    border: 0;
+    box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+    -ms-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+}
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #ffffff;
+    background-clip: border-box;
+    border: 1px solid #e6e4e9;
+    border-radius: 8px;
+}
+    </style>
+        <nav class="navbar">
+          <a class="navbar-brand"></a>
+          <form class="form-inline">
+              {% csrf_token %}
+              <a href="/job/" type="button" class="btn btn-primary " >My Jobs</a> &nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="/profile/" type="button" class="btn btn-primary " >Edit HR Profile</a> &nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="/add/" type="button" class="btn btn-primary " >Add new Job</a> &nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="/logout/" type="button" class="btn btn-primary">Logout</a>
+              {% else %}
+              <a href="/signin/" type="button" class="btn btn-primary">Want to Post a Job </a>
+            {% endif %}
+
+          </form>
+        </nav>
+</head>
+
+{% block body %}
+<body>
+<div class="container">
+<div class="row">
+    <div class="col-lg-12 card-margin">
+          <h1 class="display-4 text-center" ><a href="/">Bharat Job search</a></h1>
+
+        <div class="card search-form">
+            <div class="card-body p-0">
+                <form id="search-form" method="POST" action="/" >
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row no-gutters">
+                                <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                    <select class="form-control" name="location">
+                                       <option value="AGARTALA">AGARTALA<option>
+                                        <option value="AGRA">AGRA<option>
+                                        <option value="AHMEDABAD">AHMEDABAD<option>
+                                        <option value="AIZWAL">AIZWAL<option>
+                                        <option value="AJMER">AJMER<option>
+                                        <option value="ALLAHABAD">ALLAHABAD<option>
+                                        <option value="ALLEPPEY">ALLEPPEY<option>
+                                        <option value="ALIBAUG">ALIBAUG<option>
+                                        <option value="ALMORA">ALMORA<option>
+                                        <option value="ALSISAR">ALSISAR<option>
+                                        <option value="ALWAR">ALWAR<option>
+                                        <option value="AMBALA">AMBALA<option>
+                                        <option value="AMLA">AMLA<option>
+                                        <option value="AMRITSAR">AMRITSAR<option>
+                                        <option value="ANAND">ANAND<option>
+                                        <option value="ANKLESHWAR">ANKLESHWAR<option>
+                                        <option value="ASHTAMUDI">ASHTAMUDI<option>
+                                        <option value="AULI">AULI<option>
+                                        <option value="AURANGABAD">AURANGABAD<option>
+                                        <option value="BADDI">BADDI<option>
+                                        <option value="BADRINATH">BADRINATH<option>
+                                        <option value="BALASINOR">BALASINOR<option>
+                                        <option value="BALRAMPUR">BALRAMPUR<option>
+                                        <option value="BAMBORA">BAMBORA<option>
+                                        <option value="BANDHAVGARH">BANDHAVGARH<option>
+                                        <option value="BANDIPUR">BANDIPUR<option>
+                                        <option value="BANGALORE">BANGALORE<option>
+                                        <option value="BARBIL">BARBIL<option>
+                                        <option value="BAREILLY">BAREILLY<option>
+                                        <option value="BEHROR">BEHROR<option>
+                                        <option value="BELGAUM">BELGAUM<option>
+                                        <option value="BERHAMPUR">BERHAMPUR<option>
+                                        <option value="BETALGHAT">BETALGHAT<option>
+                                        <option value="BHARATPUR">BHARATPUR<option>
+                                        <option value="BHANDARDARA">BHANDARDARA<option>
+                                        <option value="BHARUCH">BHARUCH<option>
+                                        <option value="BHAVANGADH">BHAVANGADH<option>
+                                        <option value="BHAVNAGAR">BHAVNAGAR<option>
+                                        <option value="BHILAI">BHILAI<option>
+                                        <option value="BHIMTAL">BHIMTAL<option>
+                                        <option value="BHOPAL">BHOPAL<option>
+                                        <option value="BHUBANESHWAR">BHUBANESHWAR<option>
+                                        <option value="BHUJ">BHUJ<option>
+                                        <option value="BIKANER">BIKANER<option>
+                                        <option value="BINSAR">BINSAR<option>
+                                        <option value="BODHGAYA">BODHGAYA<option>
+                                        <option value="BUNDI">BUNDI<option>
+                                        <option value="CALICUT">CALICUT<option>
+                                        <option value="CANANNORE">CANANNORE<option>
+                                        <option value="CHAIL">CHAIL<option>
+                                        <option value="CHAMBA">CHAMBA<option>
+                                        <option value="CHANDIGARH">CHANDIGARH<option>
+                                        <option value="CHENNAI">CHENNAI<option>
+                                        <option value="CHIKMAGALUR">CHIKMAGALUR<option>
+                                        <option value="CHIPLUN">CHIPLUN<option>
+                                        <option value="CHITRAKOOT">CHITRAKOOT<option>
+                                        <option value="CHITTORGARH">CHITTORGARH<option>
+                                        <option value="COIMBATORE">COIMBATORE<option>
+                                        <option value="COONOOR">COONOOR<option>
+                                        <option value="COORG">COORG<option>
+                                        <option value="CORBETT NATIONAL PARK">CORBETT NATIONAL PARK<option>
+                                        <option value="CUTTACK">CUTTACK<option>
+                                        <option value="DABHOSA">DABHOSA<option>
+                                        <option value="DALHOUSIE">DALHOUSIE<option>
+                                        <option value="DAMAN">DAMAN<option>
+                                        <option value="DANDELI">DANDELI<option>
+                                        <option value="DAPOLI">DAPOLI<option>
+                                        <option value="DARJEELING">DARJEELING<option>
+                                        <option value="DAUSA">DAUSA<option>
+                                        <option value="DEHRADUN">DEHRADUN<option>
+                                        <option value="DHARAMSHALA">DHARAMSHALA<option>
+                                        <option value="DIBRUGARH">DIBRUGARH<option>
+                                        <option value="DIGHA">DIGHA<option>
+                                        <option value="DIU">DIU<option>
+                                        <option value="DIVE AGAR">DIVE AGAR<option>
+                                        <option value="DOOARS">DOOARS<option>
+                                        <option value="DURGAPUR">DURGAPUR<option>
+                                        <option value="DURSHET">DURSHET<option>
+                                        <option value="DWARKA">DWARKA<option>
+                                        <option value="FARIDABAD">FARIDABAD<option>
+                                        <option value="FIROZABAD">FIROZABAD<option>
+                                        <option value="GANGOTRI">GANGOTRI<option>
+                                        <option value="GANGTOK">GANGTOK<option>
+                                        <option value="GANAPATIPULE">GANAPATIPULE<option>
+                                        <option value="GANDHIDHAM">GANDHIDHAM<option>
+                                        <option value="GANDHINAGAR">GANDHINAGAR<option>
+                                        <option value="GARHMUKTESHWAR">GARHMUKTESHWAR<option>
+                                        <option value="GARHWAL">GARHWAL<option>
+                                        <option value="GAYA">GAYA<option>
+                                        <option value="GHAZIABAD">GHAZIABAD<option>
+                                        <option value="GOA">GOA<option>
+                                        <option value="GOKHARNA">GOKHARNA<option>
+                                        <option value="GONDAL">GONDAL<option>
+                                        <option value="GORAKHPUR">GORAKHPUR<option>
+                                        <option value="GREATER NOIDA">GREATER NOIDA<option>
+                                        <option value="GULMARG">GULMARG<option>
+                                        <option value="GURGAON">GURGAON<option>
+                                        <option value="GURUVAYOOR">GURUVAYOOR<option>
+                                        <option value="GUWAHATI">GUWAHATI<option>
+                                        <option value="GWALIOR">GWALIOR<option>
+                                        <option value="HALEBID">HALEBID<option>
+                                        <option value="HAMPI">HAMPI<option>
+                                        <option value="HANSI">HANSI<option>
+                                        <option value="HARIDWAR">HARIDWAR<option>
+                                        <option value="HASSAN">HASSAN<option>
+                                        <option value="HOSPET">HOSPET<option>
+                                        <option value="HOSUR">HOSUR<option>
+                                        <option value="HUBLI">HUBLI<option>
+                                        <option value="HYDERABAD">HYDERABAD<option>
+                                        <option value="IDUKKI">IDUKKI<option>
+                                        <option value="IGATPURI">IGATPURI<option>
+                                        <option value="IMPHAL">IMPHAL<option>
+                                        <option value="INDORE">INDORE<option>
+                                        <option value="JABALPUR">JABALPUR<option>
+                                        <option value="JAIPUR">JAIPUR<option>
+                                        <option value="JAISALMER">JAISALMER<option>
+                                        <option value="JALANDHAR">JALANDHAR<option>
+                                        <option value="JALGAON">JALGAON<option>
+                                        <option value="JAMBUGODHA">JAMBUGODHA<option>
+                                        <option value="JAMMU">JAMMU<option>
+                                        <option value="JAMNAGAR">JAMNAGAR<option>
+                                        <option value="JAMSHEDPUR">JAMSHEDPUR<option>
+                                        <option value="JAWHAR">JAWHAR<option>
+                                        <option value="JHANSI">JHANSI<option>
+                                        <option value="JODHPUR">JODHPUR<option>
+                                        <option value="JOJAWAR">JOJAWAR<option>
+                                        <option value="JORHAT">JORHAT<option>
+                                        <option value="JUNAGADH">JUNAGADH<option>
+                                        <option value="KABINI">KABINI<option>
+                                        <option value="KALIMPONG">KALIMPONG<option>
+                                        <option value="KANATAL">KANATAL<option>
+                                        <option value="KANCHIPURAM">KANCHIPURAM<option>
+                                        <option value="KANHA">KANHA<option>
+                                        <option value="KANPUR">KANPUR<option>
+                                        <option value="KANYAKUMARI">KANYAKUMARI<option>
+                                        <option value="KARGIL">KARGIL<option>
+                                        <option value="KARJAT">KARJAT<option>
+                                        <option value="KARNAL">KARNAL<option>
+                                        <option value="KARUR">KARUR<option>
+                                        <option value="KARWAR">KARWAR<option>
+                                        <option value="KASARGOD">KASARGOD<option>
+                                        <option value="KASAULI">KASAULI<option>
+                                        <option value="KASHIPUR">KASHIPUR<option>
+                                        <option value="KASHID">KASHID<option>
+                                        <option value="KATRA">KATRA<option>
+                                        <option value="KAUSANI">KAUSANI<option>
+                                        <option value="KAZA">KAZA<option>
+                                        <option value="KAZIRANGA">KAZIRANGA<option>
+                                        <option value="KEDARNATH">KEDARNATH<option>
+                                        <option value="KHAJJIAR">KHAJJIAR<option>
+                                        <option value="KHAJURAHO">KHAJURAHO<option>
+                                        <option value="KHANDALA">KHANDALA<option>
+                                        <option value="KHIMSAR">KHIMSAR<option>
+                                        <option value="KOCHIN">KOCHIN<option>
+                                        <option value="KODAIKANAL">KODAIKANAL<option>
+                                        <option value="KOLHAPUR">KOLHAPUR<option>
+                                        <option value="KOLKATA">KOLKATA<option>
+                                        <option value="KOLLAM">KOLLAM<option>
+                                        <option value="KOTA">KOTA<option>
+                                        <option value="KOTAGIRI">KOTAGIRI<option>
+                                        <option value="KOTTAYAM">KOTTAYAM<option>
+                                        <option value="KOVALAM">KOVALAM<option>
+                                        <option value="KUFRI">KUFRI<option>
+                                        <option value="KUMBALGARH">KUMBALGARH<option>
+                                        <option value="KULLU">KULLU<option>
+                                        <option value="KUMARAKOM">KUMARAKOM<option>
+                                        <option value="KUMBAKONAM">KUMBAKONAM<option>
+                                        <option value="KUMILY">KUMILY<option>
+                                        <option value="KURSEONG">KURSEONG<option>
+                                        <option value="KUSHINAGAR">KUSHINAGAR<option>
+                                        <option value="LACHUNG">LACHUNG<option>
+                                        <option value="LEH">LEH<option>
+                                        <option value="LAKSHADWEEP">LAKSHADWEEP<option>
+                                        <option value="LONAVALA">LONAVALA<option>
+                                        <option value="LOTHAL">LOTHAL<option>
+                                        <option value="LUCKNOW">LUCKNOW<option>
+                                        <option value="LUDHIANA">LUDHIANA<option>
+                                        <option value="LUMBINI">LUMBINI<option>
+                                        <option value="MADURAI">MADURAI<option>
+                                        <option value="MAHABALESHWAR">MAHABALESHWAR<option>
+                                        <option value="MAHABALIPURAM">MAHABALIPURAM<option>
+                                        <option value="MALAPPURAM">MALAPPURAM<option>
+                                        <option value="MALPE">MALPE<option>
+                                        <option value="MALSHEJ GHAT">MALSHEJ GHAT<option>
+                                        <option value="MALVAN">MALVAN<option>
+                                        <option value="MANALI">MANALI<option>
+                                        <option value="MANDAVI">MANDAVI<option>
+                                        <option value="MANDAWA">MANDAWA<option>
+                                        <option value="MANESAR">MANESAR<option>
+                                        <option value="MARARRI">MARARRI<option>
+                                        <option value="MANDORMONI">MANDORMONI<option>
+                                        <option value="MANGALORE">MANGALORE<option>
+                                        <option value="MANMAD">MANMAD<option>
+                                        <option value="MARCHULA">MARCHULA<option>
+                                        <option value="MATHERAN">MATHERAN<option>
+                                        <option value="MATHURA">MATHURA<option>
+                                        <option value="MCLEODGANJ">MCLEODGANJ<option>
+                                        <option value="MOHALI">MOHALI<option>
+                                        <option value="MOUNT ABU">MOUNT ABU<option>
+                                        <option value="MORADABAD">MORADABAD<option>
+                                        <option value="MORBI">MORBI<option>
+                                        <option value="MUKTESHWAR">MUKTESHWAR<option>
+                                        <option value="MUMBAI">MUMBAI<option>
+                                        <option value="MUNDRA">MUNDRA<option>
+                                        <option value="MUNNAR">MUNNAR<option>
+                                        <option value="MURUD JANJIRA">MURUD JANJIRA<option>
+                                        <option value="MUSSOORIE">MUSSOORIE<option>
+                                        <option value="MYSORE">MYSORE<option>
+                                        <option value="NADUKANI">NADUKANI<option>
+                                        <option value="NAGAPATTINAM">NAGAPATTINAM<option>
+                                        <option value="NAGARHOLE">NAGARHOLE<option>
+                                        <option value="NAGAUR FORT">NAGAUR FORT<option>
+                                        <option value="NAGOTHANE">NAGOTHANE<option>
+                                        <option value="NAGPUR">NAGPUR<option>
+                                        <option value="NAHAN">NAHAN<option>
+                                        <option value="NAINITAL">NAINITAL<option>
+                                        <option value="NALDHERA">NALDHERA<option>
+                                        <option value="NANDED">NANDED<option>
+                                        <option value="NAPNE">NAPNE<option>
+                                        <option value="NASIK">NASIK<option>
+                                        <option value="NAVI MUMBAI">NAVI MUMBAI<option>
+                                        <option value="NERAL">NERAL<option>
+                                        <option value="NEW DELHI">NEW DELHI<option>
+                                        <option value="NILGIRI">NILGIRI<option>
+                                        <option value="NOIDA">NOIDA<option>
+                                        <option value="OOTY">OOTY<option>
+                                        <option value="ORCHHA">ORCHHA<option>
+                                        <option value="OSIAN">OSIAN<option>
+                                        <option value="PACHMARHI">PACHMARHI<option>
+                                        <option value="PALAMPUR">PALAMPUR<option>
+                                        <option value="PALANPUR">PALANPUR<option>
+                                        <option value="PALI">PALI<option>
+                                        <option value="PAHALGAM">PAHALGAM<option>
+                                        <option value="PALITANA">PALITANA<option>
+                                        <option value="PALLAKAD">PALLAKAD<option>
+                                        <option value="PANCHGANI">PANCHGANI<option>
+                                        <option value="PANCHKULA">PANCHKULA<option>
+                                        <option value="PANNA">PANNA<option>
+                                        <option value="PANHALA">PANHALA<option>
+                                        <option value="PANVEL">PANVEL<option>
+                                        <option value="PANTNAGAR">PANTNAGAR<option>
+                                        <option value="PARWANOO">PARWANOO<option>
+                                        <option value="PATIALA">PATIALA<option>
+                                        <option value="PATHANKOT">PATHANKOT<option>
+                                        <option value="PATNA">PATNA<option>
+                                        <option value="PATNITOP">PATNITOP<option>
+                                        <option value="PELLING">PELLING<option>
+                                        <option value="PENCH">PENCH<option>
+                                        <option value="PHAGWARA">PHAGWARA<option>
+                                        <option value="PHALODI">PHALODI<option>
+                                        <option value="PINJORE">PINJORE<option>
+                                        <option value="PONDICHERRY">PONDICHERRY<option>
+                                        <option value="POOVAR">POOVAR<option>
+                                        <option value="PORBANDAR">PORBANDAR<option>
+                                        <option value="PORT BLAIR">PORT BLAIR<option>
+                                        <option value="POSHINA">POSHINA<option>
+                                        <option value="PRAGPUR">PRAGPUR<option>
+                                        <option value="PUNE">PUNE<option>
+                                        <option value="PURI">PURI<option>
+                                        <option value="PUSKHAR">PUSKHAR<option>
+                                        <option value="PUTTAPARTHI">PUTTAPARTHI<option>
+                                        <option value="RAI BAREILLY">RAI BAREILLY<option>
+                                        <option value="RAICHAK">RAICHAK<option>
+                                        <option value="RAIPUR">RAIPUR<option>
+                                        <option value="RAJASTHAN">RAJASTHAN<option>
+                                        <option value="RAJGIR">RAJGIR<option>
+                                        <option value="RAJKOT">RAJKOT<option>
+                                        <option value="RAJPIPLA">RAJPIPLA<option>
+                                        <option value="RAJSAMAND">RAJSAMAND<option>
+                                        <option value="RAJAHMUNDRY">RAJAHMUNDRY<option>
+                                        <option value="RAMESHWARAM">RAMESHWARAM<option>
+                                        <option value="RAM NAGAR">RAM NAGAR<option>
+                                        <option value="RAMGARH">RAMGARH<option>
+                                        <option value="RANAKPUR">RANAKPUR<option>
+                                        <option value="RANCHI">RANCHI<option>
+                                        <option value="RANIKHET">RANIKHET<option>
+                                        <option value="RANNY">RANNY<option>
+                                        <option value="RANTHAMBORE">RANTHAMBORE<option>
+                                        <option value="RATNAGIRI">RATNAGIRI<option>
+                                        <option value="RAVANGLA">RAVANGLA<option>
+                                        <option value="RISHIKESH">RISHIKESH<option>
+                                        <option value="RISHYAP">RISHYAP<option>
+                                        <option value="ROHETGARH">ROHETGARH<option>
+                                        <option value="ROURKELA">ROURKELA<option>
+                                        <option value="SAJAN">SAJAN<option>
+                                        <option value="SALEM">SALEM<option>
+                                        <option value="SAPUTARA">SAPUTARA<option>
+                                        <option value="SASAN GIR">SASAN GIR<option>
+                                        <option value="SATTAL">SATTAL<option>
+                                        <option value="SAWAI MADHOPUR">SAWAI MADHOPUR<option>
+                                        <option value="SAWANTWADI">SAWANTWADI<option>
+                                        <option value="SECUNDERABAD">SECUNDERABAD<option>
+                                        <option value="SHILLONG">SHILLONG<option>
+                                        <option value="SHIMLA">SHIMLA<option>
+                                        <option value="SHIMLIPAL">SHIMLIPAL<option>
+                                        <option value="SHIRDI">SHIRDI<option>
+                                        <option value="SHARAVANBELGOLA">SHARAVANBELGOLA<option>
+                                        <option value="SHIVANASAMUDRA">SHIVANASAMUDRA<option>
+                                        <option value="SIANA">SIANA<option>
+                                        <option value="SILIGURI">SILIGURI<option>
+                                        <option value="SILVASSA">SILVASSA<option>
+                                        <option value="SIVAGANGA DISTRICT">SIVAGANGA DISTRICT<option>
+                                        <option value="SOLAN">SOLAN<option>
+                                        <option value="SONAULI">SONAULI<option>
+                                        <option value="SRINAGAR">SRINAGAR<option>
+                                        <option value="SUNDERBAN">SUNDERBAN<option>
+                                        <option value="SURAT">SURAT<option>
+                                        <option value="TANJORE">TANJORE<option>
+                                        <option value="TAPOLA">TAPOLA<option>
+                                        <option value="TARAPITH">TARAPITH<option>
+                                        <option value="THANE">THANE<option>
+                                        <option value="THEKKADY">THEKKADY<option>
+                                        <option value="THIRVANNAMALAI">THIRVANNAMALAI<option>
+                                        <option value="THIRUVANANTHAPURAM">THIRUVANANTHAPURAM<option>
+                                        <option value="TIRUCHIRAPALLI">TIRUCHIRAPALLI<option>
+                                        <option value="TIRUPUR">TIRUPUR<option>
+                                        <option value="TIRUPATI">TIRUPATI<option>
+                                        <option value="THRISSUR">THRISSUR<option>
+                                        <option value="UDAIPUR">UDAIPUR<option>
+                                        <option value="UDHAMPUR">UDHAMPUR<option>
+                                        <option value="UDUPI">UDUPI<option>
+                                        <option value="UJJAIN">UJJAIN<option>
+                                        <option value="UTTARKASHI">UTTARKASHI<option>
+                                        <option value="VADODARA">VADODARA<option>
+                                        <option value="VAGAMON">VAGAMON<option>
+                                        <option value="VARKALA">VARKALA<option>
+                                        <option value="VAPI">VAPI<option>
+                                        <option value="VARANASI">VARANASI<option>
+                                        <option value="VELANKANNI">VELANKANNI<option>
+                                        <option value="VELLORE">VELLORE<option>
+                                        <option value="VERAVAL">VERAVAL<option>
+                                        <option value="VIJAYAWADA">VIJAYAWADA<option>
+                                        <option value="VIKRAMGADH">VIKRAMGADH<option>
+                                        <option value="VISHAKAPATNAM">VISHAKAPATNAM<option>
+                                        <option value="WAYANAD">WAYANAD<option>
+                                        <option value="WANKANER">WANKANER<option>
+                                        <option value="YAMUNOTRI">YAMUNOTRI<option>
+                                        <option value="YERCAUD">YERCAUD<option>
+                                        <option value="YUKSOM">YUKSOM<option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-8 col-md-6 col-sm-12 p-0">
+                                    <input type="text" placeholder="Search..." class="form-control"  name="search">
+                                </div>
+
+                                <div class="col-lg-1 col-md-3 col-sm-12 p-0">
+                                    <button class="btn btn-base" type="submit">
+                                        GO
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+        <div class="col-12">
+            <div class="card card-margin">
+                <div class="card-body">
+                    <div class="row search-body">
+                        <div class="col-lg-12">
+                            <div class="search-result">
+                                <div class="result-header">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="records">Showing: <b>{{count}}</b> jobs</div>
+                                        </div>
+                                        <!-- <div class="col-lg-6">
+                                            <div class="result-actions">
+                                                <div class="result-sorting">
+                                                    <span>Sort By:</span>
+                                                    <select class="form-control border-0" id="exampleOption">
+                                                        <option value="1">Relevance</option>
+                                                        <option value="2">Names (A-Z)</option>
+                                                        <option value="3">Names (Z-A)</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                                <div class="result-body">
+                                    <div class="table-responsive">
+                                        <table class="table widget-26">
+                                            <tbody>
+<!--                                               job post star-->
+                                                {% for i in Job %}
+
+                                                    <tr>
+                                                    <td>
+                                                        <div class="widget-26-job-emp-img">
+                                                            <img src="https://cdn2.iconfinder.com/data/icons/avatar-2/512/Matthew_school_boy-512.png" alt="Company" />
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="widget-26-job-title">
+                                                            <a href="#">{{i.title}}</a>
+                                                            <p class="m-0"><a href="#" class="employer-name">{{i.hr.company}}</a> <span class="text-muted time">{{i.date}}</span></p>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="widget-26-job-info">
+                                                            <p class="type m-0">{{i.type}}</p>
+                                                            <p class="text-muted m-0">in <span class="location">{{i.location}}, India</span></p>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="widget-26-job-salary">₹{{i.payout}}</div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="widget-26-job-category bg-soft-base">
+                                                            <span>&nbsp;&nbsp;{{i.profile}}&nbsp;&nbsp;  </span>
+                                                        </div>
+                                                    </td>
+
+                                                    <td>
+                                                        <div>
+                                                         <a href="https://api.whatsapp.com/send?phone=91{{i.hr.phone}}&text=Hello%20,%20sir/mam%20i%20am%20%20interested%20in%20{{i.profile}}%20job%20profile.%20I%20got%20your%20contact%20details%20from%20Bharat%20Job%20Portal" type="button" class="btn btn-outline-success">WhatsApp</a>
+                                                        </div>
+                                                    </td>
+                                                     <td>
+                                                        <div>
+                                                        <a href="{{i.hr.phone}}" type="button" class="btn btn-outline-primary">Call</a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
+                                              
+<!--                                               job post end
+ -->                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <nav class="d-flex justify-content-center">
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	
+</script>
+</body>
+{% endblock %}
+</html>
